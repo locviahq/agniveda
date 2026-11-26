@@ -771,3 +771,178 @@ img {
   }
 
 }
+
+/* ========================================
+   AGNIVEDA — MOBILE NAVIGATION
+======================================== */
+
+@media (max-width: 650px) {
+
+  .nav {
+    position: relative;
+  }
+
+  .nav-links.menu-open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 6%;
+    background: var(--espresso);
+    color: var(--white);
+    border-top: 1px solid rgba(214,183,125,.25);
+    box-shadow: 0 18px 30px rgba(0,0,0,.2);
+  }
+
+  .nav-links.menu-open a {
+    padding: 17px 0;
+    font-size: 11px;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+  }
+
+  .nav-links.menu-open a:last-child {
+    border-bottom: none;
+  }
+
+  .menu-toggle.active span:first-child {
+    transform: translateY(3.5px) rotate(45deg);
+  }
+
+  .menu-toggle.active span:last-child {
+    transform: translateY(-3.5px) rotate(-45deg);
+  }
+
+  .menu-toggle span {
+    transition: transform .3s ease;
+  }
+
+}
+
+
+/* ========================================
+   AGNIVEDA — SECTION FOUNDATIONS
+======================================== */
+
+#philosophy,
+#process,
+#collection,
+#heritage,
+#promise {
+  position: relative;
+  overflow: hidden;
+}
+
+#philosophy {
+  background: var(--ivory);
+  color: var(--espresso);
+}
+
+#process {
+  background: var(--paper);
+  color: var(--espresso);
+}
+
+#collection {
+  background: var(--espresso);
+  color: var(--white);
+}
+
+#heritage {
+  background: var(--cream);
+  color: var(--espresso);
+}
+
+#promise {
+  background: var(--ivory);
+  color: var(--espresso);
+}
+
+#footer {
+  background: #180f0a;
+  color: var(--ivory);
+}
+
+
+/* ========================================
+   SHARED SECTION ELEMENTS
+======================================== */
+
+.section-heading {
+  margin-bottom: 55px;
+}
+
+.section-heading .eyebrow {
+  display: block;
+  margin-bottom: 22px;
+}
+
+.section-heading .section-title {
+  max-width: 800px;
+}
+
+.section-heading .section-description {
+  margin-top: 22px;
+}
+
+.gold-divider {
+  width: 55px;
+  height: 1px;
+  background: var(--gold);
+  margin: 25px 0;
+}
+
+.image-frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease);
+}
+
+.image-frame:hover img {
+  transform: scale(1.055);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity .9s var(--ease),
+    transform .9s var(--ease);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+}
