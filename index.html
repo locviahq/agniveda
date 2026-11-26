@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AGNIVEDA | Dhairya se bana ghee | Traditional Bilona Ghee</title>
+  <meta name="description" content="AGNIVEDA is a premium Indian bilona ghee brand. Made from the milk of our family's own cows and buffaloes, using the traditional curd-based bilona method.">
+  <meta name="theme-color" content="#F7F2E8">
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AGNIVEDA | Dhairya se bana ghee">
+  <meta property="og:description" content="Traditional bilona ghee, slow-churned and slow-simmered, from our family's own cows and buffaloes.">
+  <meta property="og:locale" content="en_IN">
+
+  <!-- Fonts (Google Fonts). Baad mein self-host karenge. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Hanken+Grotesk:wght@300;400;500;600&family=Tiro+Devanagari+Hindi&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages.css">
+</head>
+
+<body class="page-home">
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ======================= HEADER ======================= -->
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html" aria-label="AGNIVEDA home">AGNIVEDA</a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle__label">Menu</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul role="list">
+          <li><a href="pages/our-story.html">Our Story</a></li>
+          <li><a href="pages/bilona-process.html">The Bilona Process</a></li>
+          <li><a href="pages/products.html">Products</a></li>
+          <li><a href="pages/transparency.html">Transparency</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Dhaar: ghee ki pour line (journey.js isse scroll par animate karega) -->
+  <div class="dhaar" aria-hidden="true">
+    <span class="dhaar__line"></span>
+  </div>
+
+  <main id="main">
+
+    <!-- ======================= 1. HERO ======================= -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="eyebrow">Traditional Bilona Ghee</p>
+          <h1 class="hero__title" id="hero-title">Dhairya se bana ghee.</h1>
+          <p class="lead hero__lead">
+            Milk from our family's own cows and buffaloes, set into curd, churned into butter, and slowly simmered into ghee. The old way, kept patient.
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="pages/products.html">Explore our ghee</a>
+            <a class="button button--text" href="#char-roop">See how it is made</a>
+          </div>
+        </div>
+
+        <!-- IMAGE PLACEHOLDER: hero image
+             File: assets/images/hero/hero-ghee-pour.jpg (baad mein) -->
+        <div class="hero__media">
+          <div class="media-placeholder" role="img" aria-label="Hero image coming soon: golden ghee being poured">
+            <span>Hero image: golden ghee pour<br><small>assets/images/hero/</small></span>
+          </div>
+        </div>
+      </div>
+
+      <p class="hero__note" aria-hidden="true">
+        <span lang="hi">धैर्य</span> &nbsp;/&nbsp; patience
+      </p>
+    </section>
+
+    <!-- ======================= 2. BRAND INTRO ======================= -->
+    <section class="section intro" aria-labelledby="intro-title">
+      <div class="container intro__grid">
+        <div class="intro__heading">
+          <p class="eyebrow">Why AGNIVEDA</p>
+          <h2 id="intro-title">Good ghee cannot be hurried.</h2>
+        </div>
+        <div class="intro__body">
+          <p class="lead">
+            AGNIVEDA comes from <em>Agni</em>, the flame, and <em>Veda</em>, knowledge handed down. It is a village tradition brought to modern homes, without shortcuts.
+          </p>
+          <p>
+            Milk becomes curd. Curd is churned into butter. Butter is warmed slowly until it turns into ghee. Each step takes time, and we do not skip any of it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= 3. CHAR ROOP (signature scroll experience) ======================= -->
+    <section class="journey" id="char-roop" aria-labelledby="journey-title" data-journey>
+      <div class="container">
+        <header class="journey__header">
+          <p class="eyebrow">The Bilona Process</p>
+          <h2 id="journey-title">Char Roop: four forms of patience</h2>
+          <p class="lead">Scroll slowly. The page changes as the milk does.</p>
+        </header>
+
+        <ol class="journey__stages" role="list">
+
+          <li class="stage" data-stage="doodh">
+            <div class="stage__text">
+              <p class="stage__number">01</p>
+              <h3><span lang="hi">दूध</span> Doodh</h3>
+              <p>Fresh milk from our family's own cows and buffaloes is the beginning of everything.</p>
+            </div>
+            <!-- IMAGE PLACEHOLDER: assets/images/process/process-01-milk.jpg -->
+            <div class="stage__media">
+              <div class="media-placeholder" role="img" aria-label="Image coming soon: fresh milk">
+                <span>Doodh image<br><small>assets/images/process/</small></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="stage" data-stage="dahi">
+            <div class="stage__text">
+              <p class="stage__number">02</p>
+              <h3><span lang="hi">दही</span> Dahi</h3>
+              <p>The milk is set into curd. In the bilona method, ghee is made from curd, not directly from cream.</p>
+            </div>
+            <!-- IMAGE PLACEHOLDER: assets/images/process/process-02-curd.jpg -->
+            <div class="stage__media">
+              <div class="media-placeholder" role="img" aria-label="Image coming soon: set curd">
+                <span>Dahi image<br><small>assets/images/process/</small></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="stage" data-stage="makkhan">
+            <div class="stage__text">
+              <p class="stage__number">03</p>
+              <h3><span lang="hi">मक्खन</span> Makkhan</h3>
+              <p>The curd is churned with a wooden churner until butter separates and rises.</p>
+            </div>
+            <!-- IMAGE PLACEHOLDER: assets/images/process/process-03-churning.jpg -->
+            <div class="stage__media">
+              <div class="media-placeholder" role="img" aria-label="Image coming soon: wooden churner and butter">
+                <span>Makkhan image<br><small>assets/images/process/</small></span>
+              </div>
+            </div>
+          </li>
+
+          <li class="stage" data-stage="ghee">
+            <div class="stage__text">
+              <p class="stage__number">04</p>
+              <h3><span lang="hi">घी</span> Ghee</h3>
+              <p>The butter is heated slowly and patiently until it becomes golden, fragrant ghee.</p>
+            </div>
+            <!-- IMAGE PLACEHOLDER: assets/images/process/process-04-ghee.jpg -->
+            <div class="stage__media">
+              <div class="media-placeholder" role="img" aria-label="Image coming soon: golden ghee">
+                <span>Ghee image<br><small>assets/images/process/</small></span>
+              </div>
+            </div>
+          </li>
+
+        </ol>
+
+        <p class="journey__cta">
+          <a class="button button--text" href="pages/bilona-process.html">Read the full process</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================= 4. PRODUCTS ======================= -->
+    <section class="section products" id="products" aria-labelledby="products-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="eyebrow">Our Ghee</p>
+          <h2 id="products-title">Two ghees, one method.</h2>
+          <p class="lead">Cow ghee and buffalo ghee, both made the bilona way.</p>
+        </header>
+
+        <div class="products__grid">
+
+          <article class="product">
+            <!-- IMAGE PLACEHOLDER: assets/images/product/product-cow-ghee-jar.jpg (jar bina label ke) -->
+            <div class="media-placeholder media-placeholder--tall" role="img" aria-label="Product image coming soon: cow ghee jar">
+              <span>Cow Ghee jar<br><small>assets/images/product/</small></span>
+            </div>
+            <div class="product__body">
+              <h3>Cow Ghee</h3>
+              <p>Traditional bilona ghee made from the milk of our family's own cows.</p>
+              <ul class="product__meta" role="list">
+                <li>Sizes: <span class="placeholder-tag">[to be confirmed]</span></li>
+                <li>Price: <span class="placeholder-tag">[to be confirmed]</span></li>
+              </ul>
+              <p class="product__buy">
+                <span class="badge">Amazon: coming soon</span>
+                <span class="badge">Flipkart: coming soon</span>
+              </p>
+            </div>
+          </article>
+
+          <article class="product">
+            <!-- IMAGE PLACEHOLDER: assets/images/product/product-buffalo-ghee-jar.jpg (jar bina label ke) -->
+            <div class="media-placeholder media-placeholder--tall" role="img" aria-label="Product image coming soon: buffalo ghee jar">
+              <span>Buffalo Ghee jar<br><small>assets/images/product/</small></span>
+            </div>
+            <div class="product__body">
+              <h3>Buffalo Ghee</h3>
+              <p>Traditional bilona ghee made from the milk of our family's own buffaloes.</p>
+              <ul class="product__meta" role="list">
+                <li>Sizes: <span class="placeholder-tag">[to be confirmed]</span></li>
+                <li>Price: <span class="placeholder-tag">[to be confirmed]</span></li>
+              </ul>
+              <p class="product__buy">
+                <span class="badge">Amazon: coming soon</span>
+                <span class="badge">Flipkart: coming soon</span>
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="products__link">
+          <a class="button button--text" href="pages/products.html">View all product details</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================= 5. FAMILY & SOURCING ======================= -->
+    <section class="section section--dahi story" aria-labelledby="story-title">
+      <div class="container story__grid">
+
+        <!-- IMAGE PLACEHOLDER: assets/images/village/village-morning-dairy.jpg -->
+        <div class="story__media">
+          <div class="media-placeholder media-placeholder--tall" role="img" aria-label="Image coming soon: village dairy in morning light">
+            <span>Village and dairy image<br><small>assets/images/village/</small></span>
+          </div>
+        </div>
+
+        <div class="story__text">
+          <p class="eyebrow">Gaon se &middot; From the village</p>
+          <h2 id="story-title">Our own animals. Our own milk.</h2>
+          <p class="lead">
+            Our ghee begins at home. The milk comes from our family's own cows and buffaloes, so we know exactly where every jar starts.
+          </p>
+          <p>
+            AGNIVEDA grew out of a village, and that is where its habits still live: early mornings, slow work and no hurry. We are bringing that ghee to households that want tradition with a modern standard of care.
+          </p>
+          <p class="placeholder-note">
+            <span class="placeholder-tag">[Village name, district, state: to be added]</span>
+          </p>
+          <a class="button button--text" href="pages/our-story.html">Read our story</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================= 6. TRANSPARENCY ======================= -->
+    <section class="section transparency" aria-labelledby="transparency-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="eyebrow">Transparency</p>
+          <h2 id="transparency-title">We will only show what is verified.</h2>
+          <p class="lead">
+            Official details will appear here once they are confirmed and documented. Until then, they are marked as pending, honestly.
+          </p>
+        </header>
+
+        <ul class="transparency__list" role="list">
+          <li>
+            <span class="transparency__label">FSSAI licence</span>
+            <span class="placeholder-tag">[Pending]</span>
+          </li>
+          <li>
+            <span class="transparency__label">Laboratory test reports</span>
+            <span class="placeholder-tag">[Pending]</span>
+          </li>
+          <li>
+            <span class="transparency__label">Shelf life and storage guidance</span>
+            <span class="placeholder-tag">[Pending]</span>
+          </li>
+          <li>
+            <span class="transparency__label">Batch and packing details</span>
+            <span class="placeholder-tag">[Pending]</span>
+          </li>
+        </ul>
+
+        <p class="transparency__link">
+          <a class="button button--text" href="pages/transparency.html">More on transparency</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================= 7. LIFESTYLE ======================= -->
+    <section class="section section--dahi lifestyle" aria-labelledby="lifestyle-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="eyebrow">At the table</p>
+          <h2 id="lifestyle-title">Made for everyday kitchens.</h2>
+          <p class="lead">From a warm roti to a slow-cooked dal, ghee belongs on the table, not on a shelf.</p>
+        </header>
+
+        <div class="lifestyle__grid">
+          <!-- IMAGE PLACEHOLDERS: assets/images/lifestyle/ -->
+          <div class="media-placeholder" role="img" aria-label="Image coming soon: food with ghee">
+            <span>Lifestyle image 1<br><small>assets/images/lifestyle/</small></span>
+          </div>
+          <div class="media-placeholder" role="img" aria-label="Image coming soon: food with ghee">
+            <span>Lifestyle image 2<br><small>assets/images/lifestyle/</small></span>
+          </div>
+          <div class="media-placeholder" role="img" aria-label="Image coming soon: food with ghee">
+            <span>Lifestyle image 3<br><small>assets/images/lifestyle/</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= 8. PHILOSOPHY ======================= -->
+    <section class="section section--dark philosophy" aria-labelledby="philosophy-title">
+      <div class="container container--narrow philosophy__inner">
+        <p class="eyebrow">Our philosophy</p>
+        <h2 id="philosophy-title">
+          <span lang="hi">धैर्य</span><br>Waqt lagta hai. Isliye khaas hai.
+        </h2>
+        <p class="lead">
+          We believe the best things in a kitchen are the ones that were never rushed. That is the whole idea behind AGNIVEDA.
+        </p>
+      </div>
+    </section>
+
+    <!-- ======================= 9. FAQ ======================= -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container container--narrow">
+        <header class="section__header">
+          <p class="eyebrow">Questions</p>
+          <h2 id="faq-title">Frequently asked</h2>
+        </header>
+
+        <div class="faq__list">
+
+          <details class="faq__item">
+            <summary>What is bilona ghee?</summary>
+            <p>Bilona is a traditional method. Milk is set into curd, the curd is churned to separate butter, and the butter is slowly heated to make ghee.</p>
+          </details>
+
+          <details class="faq__item">
+            <summary>Where does your milk come from?</summary>
+            <p>From our family's own cows and buffaloes.</p>
+          </details>
+
+          <details class="faq__item">
+            <summary>Where can I buy AGNIVEDA ghee?</summary>
+            <p>We are preparing our listings on Amazon and Flipkart. Links will be added here as soon as they are live.</p>
+          </details>
+
+          <details class="faq__item">
+            <summary>What is the shelf life and how should I store it?</summary>
+            <p>This information will be published once it is verified. <span class="placeholder-tag">[Pending]</span></p>
+          </details>
+
+          <details class="faq__item">
+            <summary>Do you hold FSSAI or other certifications?</summary>
+            <p>Official licence and certification details will be shown on our Transparency page once confirmed. <span class="placeholder-tag">[Pending]</span></p>
+          </details>
+
+          <details class="faq__item">
+            <summary>How can I contact you?</summary>
+            <p>Please visit our <a href="pages/contact.html">Contact page</a>.</p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+
+      <div class="site-footer__brand">
+        <p class="brand">AGNIVEDA</p>
+        <p>Dhairya se bana ghee.</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <ul role="list">
+          <li><a href="pages/our-story.html">Our Story</a></li>
+          <li><a href="pages/bilona-process.html">The Bilona Process</a></li>
+          <li><a href="pages/products.html">Products</a></li>
+          <li><a href="pages/transparency.html">Transparency</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__contact">
+        <p>Email: <span class="placeholder-tag">[to be added]</span></p>
+        <p>WhatsApp: <span class="placeholder-tag">[to be added]</span></p>
+        <p>FSSAI: <span class="placeholder-tag">[pending]</span></p>
+      </div>
+
+    </div>
+
+    <div class="container site-footer__bottom">
+      <p>&copy; AGNIVEDA. All rights reserved.</p>
+      <ul role="list">
+        <li><a href="pages/privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="pages/terms.html">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+
+    <!-- Dhaar ka ant: ek chhoti boond -->
+    <div class="dhaar-drop" aria-hidden="true"></div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/journey.js" defer></script>
+
+</body>
+</html>
