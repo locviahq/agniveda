@@ -1,9 +1,9 @@
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* =================================
-     PAGE LOADER
-  ================================= */
+  /* ==========================================
+     1. PAGE LOADER
+  ========================================== */
 
   const loader = document.getElementById("loader");
 
@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =================================
-     NAVBAR SCROLL EFFECT
-  ================================= */
+  /* ==========================================
+     2. NAVBAR SCROLL EFFECT
+  ========================================== */
 
   const navbar = document.getElementById("navbar");
 
@@ -42,12 +42,22 @@ document.addEventListener("DOMContentLoaded", () => {
   updateNavbar();
 
 
-  /* =================================
-     MOBILE MENU
-  ================================= */
+  /* ==========================================
+     3. MOBILE MENU
+  ========================================== */
 
   const menuButton = document.querySelector(".menu-toggle");
   const navLinks = document.querySelector(".nav-links");
+
+  function closeMenu() {
+    if (!menuButton || !navLinks) return;
+
+    navLinks.classList.remove("menu-open");
+    menuButton.classList.remove("active");
+
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Open menu");
+  }
 
   if (menuButton && navLinks) {
 
@@ -58,74 +68,103 @@ document.addEventListener("DOMContentLoaded", () => {
       menuButton.classList.toggle("active", isOpen);
 
       menuButton.setAttribute(
-        "aria-label",
-        isOpen ? "Close menu" : "Open menu"
-      );
-
-      menuButton.setAttribute(
         "aria-expanded",
         String(isOpen)
       );
 
+      menuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Close menu" : "Open menu"
+      );
+
     });
+
 
     navLinks.querySelectorAll("a").forEach((link) => {
 
-      link.addEventListener("click", () => {
+      link.addEventListener("click", closeMenu);
 
-        navLinks.classList.remove("menu-open");
-        menuButton.classList.remove("active");
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.setAttribute("aria-label", "Open menu");
+    });
 
-      });
+
+    document.addEventListener("click", (event) => {
+
+      const clickedInsideMenu = navLinks.contains(event.target);
+      const clickedButton = menuButton.contains(event.target);
+
+      if (!clickedInsideMenu && !clickedButton) {
+        closeMenu();
+      }
+
+    });
+
+
+    window.addEventListener("resize", () => {
+
+      if (window.innerWidth > 650) {
+        closeMenu();
+      }
 
     });
 
   }
 
 
-  /* =================================
-     SCROLL REVEAL
-  ================================= */
+  /* ==========================================
+     4. SCROLL REVEAL ANIMATIONS
+  ========================================== */
 
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
+  const revealElements = document.querySelectorAll(".reveal");
 
-      entries.forEach((entry) => {
+  if ("IntersectionObserver" in window) {
 
-        if (entry.isIntersecting) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
 
-          entry.target.classList.add("visible");
+        entries.forEach((entry) => {
 
-          observer.unobserve(entry.target);
+          if (entry.isIntersecting) {
 
-        }
+            entry.target.classList.add("visible");
 
-      });
+            observer.unobserve(entry.target);
 
-    },
-    {
-      threshold: 0.12,
-      rootMargin: "0px 0px -35px 0px"
-    }
-  );
+          }
 
-  document.querySelectorAll(".reveal").forEach((element) => {
-    revealObserver.observe(element);
-  });
+        });
+
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -35px 0px"
+      }
+    );
+
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
+    });
+
+  } else {
+
+    revealElements.forEach((element) => {
+      element.classList.add("visible");
+    });
+
+  }
 
 
-  /* =================================
-     HERO MOUSE MOVEMENT
-  ================================= */
+  /* ==========================================
+     5. HERO IMAGE MOUSE DEPTH EFFECT
+  ========================================== */
 
   const hero = document.querySelector(".hero");
+  const heroImage = document.querySelector(".hero-bg-image");
 
-  if (
-    hero &&
-    window.matchMedia("(hover: hover) and (pointer: fine)").matches
-  ) {
+  const supportsMouse = window.matchMedia(
+    "(hover: hover) and (pointer: fine)"
+  ).matches;
+
+  if (hero && heroImage && supportsMouse) {
 
     hero.addEventListener("mousemove", (event) => {
 
@@ -134,34 +173,27 @@ document.addEventListener("DOMContentLoaded", () => {
       const x = (event.clientX - rect.left) / rect.width;
       const y = (event.clientY - rect.top) / rect.height;
 
-      const moveX = (x - 0.5) * 12;
-      const moveY = (y - 0.5) * 12;
+      const moveX = (x - 0.5) * 10;
+      const moveY = (y - 0.5) * 10;
 
-      const image = hero.querySelector(".hero-bg-image");
-
-      if (image) {
-        image.style.transform =
-          `scale(1.04) translate(${moveX}px, ${moveY}px)`;
-      }
+      heroImage.style.transform =
+        `scale(1.04) translate(${moveX}px, ${moveY}px)`;
 
     });
 
+
     hero.addEventListener("mouseleave", () => {
 
-      const image = hero.querySelector(".hero-bg-image");
-
-      if (image) {
-        image.style.transform = "scale(1)";
-      }
+      heroImage.style.transform = "scale(1)";
 
     });
 
   }
 
 
-  /* =================================
-     SMOOTH ANCHOR SCROLLING
-  ================================= */
+  /* ==========================================
+     6. SMOOTH ANCHOR SCROLLING
+  ========================================== */
 
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
 
@@ -186,5 +218,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
+
+  /* ==========================================
+     7. AUTOMATIC FOOTER YEAR
+  ========================================== */
+
+  const yearElement = document.getElementById("current-year");
+
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
+
+  /* ==========================================
+     8. PAGE READY
+  ========================================== */
+
+  document.documentElement.classList.add("js-ready");
 
 });
